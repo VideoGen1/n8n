@@ -1,10 +1,13 @@
 services:
   - type: web
-    name: n8n
+    # Use a unique name so a previously-created service doesn't cause a conflict
+    name: n8n-service
     env: docker
     plan: free
     region: frankfurt  # يمكنك تغيير المنطقة حسب موقعك
     autoDeploy: true
+    # Explicit startCommand ensures Render runs n8n on the port it provides
+    startCommand: n8n start --port $PORT
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
