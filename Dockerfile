@@ -14,8 +14,9 @@ ENV N8N_ENCRYPTION_KEY=random_secret_key
 ENV WEBHOOK_TUNNEL_URL=https://n8n-jto2.onrender.com
 ENV EXECUTIONS_PROCESS=main
 
-# Default n8n port
+# Default n8n port (documentation only)
 EXPOSE 5678
 
-# Startup command
-CMD ["n8n", "start"]
+# Use a shell command so $PORT (provided by Render) is expanded at container start time.
+# If PORT is not set, default to 5678.
+CMD ["sh", "-lc", "n8n start --port ${PORT:-5678}"]
