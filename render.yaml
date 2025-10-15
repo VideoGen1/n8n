@@ -11,7 +11,7 @@ services:
       - key: N8N_BASIC_AUTH_USER
         value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: "your_strong_password"
+        value: "X5TS67jC8wi@,E#"
       - key: N8N_ENCRYPTION_KEY
         value: "random_secret_key_123456"
       - key: WEBHOOK_TUNNEL_URL
